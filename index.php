@@ -1,0 +1,115 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+         <script src="https://kit.fontawesome.com/ad96519a55.js" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/ad96519a55.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+   .contanair{  
+     margin:200px 2000px;
+     height:350px
+    
+   }
+   .login{
+     height: 30px;
+     width: 100px;
+     margin: 10px 35px;
+     border-radius: 7px;
+     background-color: rgb(245, 179, 155);
+     border: 1px solid orange;
+    
+   }
+    </style>
+<body>
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-image: image-set("background.jpg.jpg")
+           ;
+            background-size: cover;
+    background-repeat: no-repeat;
+        }
+        .login-container{
+            background-color: rgba(10, 92, 146, 0.308);
+            color: rgb(255, 136, 0);
+            height: 300px;
+            width: 300px;
+            margin: 100px 900px;
+            text-align: center;
+            border: 2px solid rgba(10, 92, 146, 0.507);
+            border-radius: 7px;
+        }
+        .mybuttons{
+            margin: 0px 55px;
+        }
+        .button2{
+            font-size: 15px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif ;
+            background-color:rgb(255, 136, 0) ;
+            color: rgb(0, 0, 0);
+            margin: 20px 0px;
+            border: 2px solid rgb(211, 121, 18);
+            border-radius: 15px;
+            width: 90px;
+            height: 35px;
+        }
+        input{
+            margin: 0px 10px;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+     <div class="login-container">
+  <h1 style="color: rgb(255, 136, 0);">SIGN IN</h1><br>
+<form  action="index.php" method="post">
+NAME:<input type="text" name="username"><br>
+<br>
+Email:<input type="text" name="email"><br>
+<br>
+Password:<input type="text" name="password"><br>
+
+<br>
+<div class="mybuttons">
+<button class="button2" type="login" name="login" value="login">Sign in</button>
+<button class="button2" type="reset" value="clear">clear</button>
+</div>
+</form > 
+
+     </div>
+</body>
+</html>
+
+<?php
+if (isset($_POST["login"])){
+    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["email"] = $_POST["email"];
+    $_SESSION["password"] = $_POST["password"];
+    
+    if(!empty($_POST["username"])&
+       !empty($_POST["email"])&
+        !empty($_POST["password"])){
+       $_SESSION["username"] = $_POST["username"];
+        $_SESSION["email"] = $_POST["email"];
+         $_SESSION["password"] = $_POST["password"];
+              header("Location:home.php");
+       }
+               
+              else{
+                echo"messing username/email/username <br>";
+       }
+}
+?>
